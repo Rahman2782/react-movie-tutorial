@@ -1,5 +1,8 @@
-import "./App.css"
+import "./css/App.css"
+import Favourites from "./pages/Favourites";
 import Home from "./pages/Home";
+import NavBar from "./components/NavBar";
+import { Routes, Route } from "react-router-dom";
 
 // //components return HTML
 // export default function App() { //components start with a capital letter
@@ -21,9 +24,15 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <>
-      <Home/>
-    </>
+    <div>
+      <NavBar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/favourites" element={<Favourites />}></Route>
+        </Routes>
+      </main>
+    </div>
   );
 }
 
